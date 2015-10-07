@@ -1,0 +1,25 @@
+{
+  "name": "testium-driver-sync",
+  "version": "0.0.0",
+  "description": "Sync interface for testium",
+  "main": "lib/testium-driver-sync.js",
+  "scripts": {
+    "test": "tap 'test/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testiumjs/testium-driver-sync.git"
+  },
+  "keywords": [
+    "testium",
+    "sync",
+    "selenium",
+    "webdriver"
+  ],
+  "author": "Jan Krems <jan.krems@groupon.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/testiumjs/testium-driver-sync/issues"
+  },
+  "homepage": "https://github.com/testiumjs/testium-driver-sync#readme"
+}
