@@ -1,5 +1,3 @@
-'use strict';
-
 import {getBrowser} from '../mini-testium-mocha';
 import assert from 'assertive';
 
