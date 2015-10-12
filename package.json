@@ -4,7 +4,7 @@
   "description": "Sync interface for testium",
   "main": "lib/testium-driver-sync.js",
   "scripts": {
-    "test": "cd examples/hello && babel-tap 'test/**/*.js'"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,16 @@
   },
   "homepage": "https://github.com/testiumjs/testium-driver-sync#readme",
   "devDependencies": {
-    "babel-tap": "^3.0.1",
-    "testium-core": "^1.1.0"
+    "babel-core": "^5.8.25",
+    "mocha": "^2.3.3",
+    "node-static": "~0.7.7",
+    "testium-core": "^1.1.2"
   },
   "dependencies": {
+    "assertive": "^2.0.2",
     "debug": "^2.2.0",
     "lodash": "^3.10.1",
+    "testium-cookie": "^1.0.0",
     "webdriver-http-sync": "^1.2.1"
   }
 }
