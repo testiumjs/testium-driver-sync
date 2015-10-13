@@ -11,51 +11,51 @@ describe('evaluate', () => {
   });
 
   it('can get an input\'s value', () => {
-    var element = browser.getElement('#text-input');
-    var value = element.get('value');
+    const element = browser.getElement('#text-input');
+    const value = element.get('value');
     assert.equal('Input value was not found', 'initialvalue', value);
   });
 
   it('can clear an input\'s value', () => {
-    var element = browser.getElement('#text-input');
+    const element = browser.getElement('#text-input');
     element.clear();
-    var value = element.get('value');
+    const value = element.get('value');
     assert.equal('Input value was not cleared', '', value);
   });
 
   it('can type into an input', () => {
-    var element = browser.getElement('#text-input');
+    const element = browser.getElement('#text-input');
     element.type('new stuff');
-    var value = element.get('value');
+    const value = element.get('value');
     assert.equal('Input value was not typed', 'new stuff', value);
   });
 
   it('can replace the input\'s value', () => {
-    var element = browser.getElement('#text-input');
-    var value = element.get('value');
-    assert.notEqual('Input value is already empty', '', value);
+    const element = browser.getElement('#text-input');
+    const valueBefore = element.get('value');
+    assert.notEqual('Input value is already empty', '', valueBefore);
     browser.clearAndType('#text-input', 'new stuff2');
-    value = element.get('value');
-    assert.equal('Input value was not typed', 'new stuff2', value);
+    const valueAfter = element.get('value');
+    assert.equal('Input value was not typed', 'new stuff2', valueAfter);
   });
 
   it('can get a textarea\'s value', () => {
-    var element = browser.getElement('#text-area');
-    var value = element.get('value');
+    const element = browser.getElement('#text-area');
+    const value = element.get('value');
     assert.equal('Input value was not found', 'initialvalue', value);
   });
 
   it('can clear an textarea\'s value', () => {
-    var element = browser.getElement('#text-area');
+    const element = browser.getElement('#text-area');
     element.clear();
-    var value = element.get('value');
+    const value = element.get('value');
     assert.equal('Input value was not cleared', '', value);
   });
 
   it('can type into a textarea', () => {
-    var element = browser.getElement('#text-area');
+    const element = browser.getElement('#text-area');
     element.type('new stuff');
-    var value = element.get('value');
+    const value = element.get('value');
     assert.equal('Input value was not typed', 'new stuff', value);
   });
 });

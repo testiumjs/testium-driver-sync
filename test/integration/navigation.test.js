@@ -61,8 +61,8 @@ describe('navigation', () => {
       browser.navigateTo('/index.html');
       assert.equal(200, browser.getStatusCode());
 
-      var error = assert.throws(() => browser.waitForUrl('/some-random-place.html', 5));
-      var expectedError = /^Timed out \(5ms\) waiting for url \("\/some-random-place\.html"\)\. Last value was: "http:\/\/127\.0\.0\.1:[\d]+\/index\.html"$/;
+      const error = assert.throws(() => browser.waitForUrl('/some-random-place.html', 5));
+      const expectedError = /^Timed out \(5ms\) waiting for url \("\/some-random-place\.html"\)\. Last value was: "http:\/\/127\.0\.0\.1:[\d]+\/index\.html"$/;
       assert.match(expectedError, error.message);
     });
 
@@ -71,7 +71,7 @@ describe('navigation', () => {
         browser.navigateTo('/redirect-to-query.html');
         browser.waitForUrl('/index.html', {
           'a b': 'A B',
-          c: '1,7'
+          c: '1,7',
         });
         assert.equal(200, browser.getStatusCode());
       });
@@ -80,7 +80,7 @@ describe('navigation', () => {
         browser.navigateTo('/redirect-to-query.html');
         browser.waitForUrl('/index.html', {
           c: '1,7',
-          'a b': 'A B'
+          'a b': 'A B',
         });
       });
 
@@ -88,14 +88,14 @@ describe('navigation', () => {
         browser.navigateTo('/redirect-to-query.html');
         browser.waitForUrl('/index.html', {
           c: /[\d,]+/,
-          'a b': 'A B'
+          'a b': 'A B',
         });
       });
 
       it('detects non-matches too', () => {
         browser.navigateTo('/redirect-to-query.html');
 
-        var error = assert.throws(() => browser.waitForUrl('/index.html', { no: 'q' }, 200));
+        const error = assert.throws(() => browser.waitForUrl('/index.html', { no: 'q' }, 200));
         assert.match(/Timed out .* waiting for url/, error.message);
       });
     });

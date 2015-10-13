@@ -3,7 +3,7 @@ import assert from 'assertive';
 
 import Config from 'testium-core/lib/config';
 
-var browserName = Config.load().get('browser');
+const browserName = Config.load().get('browser');
 
 describe('dialogs', () => {
   if (browserName === 'phantomjs') {
@@ -11,9 +11,10 @@ describe('dialogs', () => {
     return;
   }
 
-  let browser, target;
+  let browser;
   before(async () => (browser = await getBrowser()));
 
+  let target;
   before(() => {
     browser.navigateTo('/');
     browser.assert.httpStatus(200);
@@ -26,7 +27,7 @@ describe('dialogs', () => {
     beforeEach(() => browser.click('.link_to_open_an_alert'));
 
     it('can get an alert text', () => {
-      var text = browser.getAlertText();
+      const text = browser.getAlertText();
       browser.acceptAlert();
       assert.equal('Alert text was not found', 'An alert!', text);
     });
@@ -46,7 +47,7 @@ describe('dialogs', () => {
     beforeEach(() => browser.click('.link_to_open_a_confirm'));
 
     it('can get confirm text', () => {
-      var text = browser.getAlertText();
+      const text = browser.getAlertText();
       browser.acceptAlert();
       assert.equal('Confirm text was not found', 'A confirmation!', text);
     });
@@ -66,7 +67,7 @@ describe('dialogs', () => {
     beforeEach(() => browser.click('.link_to_open_a_prompt'));
 
     it('can get prompt text', () => {
-      text = browser.getAlertText();
+      const text = browser.getAlertText();
       browser.acceptAlert();
       assert.equal('Confirm text was not found', 'A prompt!', text);
     });

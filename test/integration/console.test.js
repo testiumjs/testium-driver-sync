@@ -14,31 +14,31 @@ describe('console', () => {
   // for console.logs differently.
   // Use at your own risk.
   it('can all be retrieved', () => {
-    var { browserName } = browser.capabilities;
-    var logs;
+    const { browserName } = browser.capabilities;
+    let logs;
 
     switch (browserName) {
-      case 'firefox':
-        // firefox ignores this entirely
-        break;
+    case 'firefox':
+      // firefox ignores this entirely
+      break;
 
-      case 'chrome':
-        logs = browser.getConsoleLogs();
-        assert.truthy('console.logs length', logs.length > 0);
+    case 'chrome':
+      logs = browser.getConsoleLogs();
+      assert.truthy('console.logs length', logs.length > 0);
 
-        logs = browser.getConsoleLogs();
-        assert.equal(0, logs.length);
+      logs = browser.getConsoleLogs();
+      assert.equal(0, logs.length);
 
-        browser.click('#log-button');
+      browser.click('#log-button');
 
-        logs = browser.getConsoleLogs();
-        assert.truthy('console.logs length', logs.length > 0);
-        break;
+      logs = browser.getConsoleLogs();
+      assert.truthy('console.logs length', logs.length > 0);
+      break;
 
-      default:
-        logs = browser.getConsoleLogs();
-        assert.truthy('console.logs length', logs.length > 0);
-        break;
+    default:
+      logs = browser.getConsoleLogs();
+      assert.truthy('console.logs length', logs.length > 0);
+      break;
     }
   });
 });

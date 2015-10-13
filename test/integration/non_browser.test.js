@@ -8,7 +8,7 @@ describe('Non-browser test', () => {
   before(async () => (browser = await getBrowser()));
 
   it('can make a request without using the browser', done => {
-    var url = `${browser.appUrl}/echo`;
+    const url = `${browser.appUrl}/echo`;
     get(url, response => {
       assert.equal(200, response.statusCode);
       done();

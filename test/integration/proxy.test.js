@@ -1,5 +1,4 @@
 import {getBrowser} from '../mini-testium-mocha';
-import assert from 'assertive';
 
 describe('proxy', () => {
   let browser;
@@ -26,6 +25,9 @@ describe('proxy', () => {
     browser.navigateTo('/blackholed-resource.html');
     browser.assert.httpStatus(200);
 
+    // this can't simply be sync
+    // because firefox blocks dom-ready
+    // if we don't wait on the client-side
     setTimeout(() => {
       // when navigating away, the proxy should
       // abort the resource request;
@@ -33,11 +35,7 @@ describe('proxy', () => {
       // or status code retrieval
       browser.navigateTo('/');
       browser.assert.httpStatus(200);
-      done()
-
-      // this can't simply be sync
-      // because firefox blocks dom-ready
-      // if we don't wait on the client-side
+      done();
     }, 50);
   });
 

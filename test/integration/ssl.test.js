@@ -7,8 +7,8 @@ describe('ssl/tls', () => {
 
   it('TLS is supported', () => {
     browser.navigateTo('https://www.howsmyssl.com/a/check');
-    var raw = browser.getExistingElement('pre').get('text');
-    var sslReport = JSON.parse(raw);
+    const raw = browser.getExistingElement('pre').get('text');
+    const sslReport = JSON.parse(raw);
     assert.match(/^TLS/, sslReport.tls_version);
   });
 });

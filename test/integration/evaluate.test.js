@@ -8,7 +8,7 @@ describe('evaluate', () => {
   before(() => browser.navigateTo('/'));
 
   it('runs JavaScript passed as a String', () => {
-    var value = browser.evaluate('return 3;');
+    const value = browser.evaluate('return 3;');
     assert.equal(3, value);
   });
 

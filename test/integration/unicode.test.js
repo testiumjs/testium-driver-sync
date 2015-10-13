@@ -8,10 +8,10 @@ describe('unicode support', () => {
   before(() => browser.navigateTo('/'));
 
   it('multibyte unicode can pass through and back from WebDriver', () => {
-    var multibyteText = '日本語 text';
-    var element = browser.getElement('#blank-input');
+    const multibyteText = '日本語 text';
+    const element = browser.getElement('#blank-input');
     element.type(multibyteText);
-    var result = element.get('value');
+    const result = element.get('value');
     assert.equal(result, multibyteText);
   });
 });

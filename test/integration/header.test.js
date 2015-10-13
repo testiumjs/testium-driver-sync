@@ -12,13 +12,13 @@ describe('header', () => {
     });
 
     it('as a group', () => {
-      var headers = browser.getHeaders();
-      var contentType = headers['content-type'];
+      const headers = browser.getHeaders();
+      const contentType = headers['content-type'];
       assert.equal('text/html', contentType);
     });
 
     it('individually', () => {
-      var contentType = browser.getHeader('content-type');
+      const contentType = browser.getHeader('content-type');
       assert.equal('text/html', contentType);
     });
   });
@@ -28,8 +28,8 @@ describe('header', () => {
       browser.navigateTo('/echo', { headers: { 'x-something': 'that place' } }));
 
     it('to new values', () => {
-      var source = browser.getElement('body').get('text');
-      var body = JSON.parse(source);
+      const source = browser.getElement('body').get('text');
+      const body = JSON.parse(source);
       assert.equal(body.headers['x-something'], 'that place');
     });
   });
