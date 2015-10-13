@@ -5,9 +5,14 @@ import {once} from 'lodash';
 
 import createDriver from '../';
 
-const initOnce = once(initTestium);
+let browser = null;
 
-export async function getBrowser() {
-  const { browser } = await initOnce().then(createDriver);
+async function createBrowser() {
+  const testium = await initTestium().then(createDriver);
+  browser = testium.browser;
   return browser;
 }
+
+after(() => browser && browser.close());
+
+export const getBrowser = once(createBrowser);
