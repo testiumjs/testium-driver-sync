@@ -1,6 +1,6 @@
 {
   "launch": true,
   "app": {
-    "command": "node examples/testium-example-app/server.js"
+    "command": "testium-example-app"
   }
 }
