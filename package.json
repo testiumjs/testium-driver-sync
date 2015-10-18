@@ -1,6 +1,6 @@
 {
   "name": "testium-driver-sync",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sync interface for testium",
   "main": "lib/testium-driver-sync.js",
   "scripts": {
