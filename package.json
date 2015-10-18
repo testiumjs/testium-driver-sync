@@ -39,5 +39,13 @@
     "lodash": "^3.10.1",
     "testium-cookie": "^1.0.0",
     "webdriver-http-sync": "^1.2.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "license": {
+      "exclude": [
+        "."
+      ]
+    }
   }
 }
