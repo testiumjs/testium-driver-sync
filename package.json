@@ -4,7 +4,8 @@
   "description": "Sync interface for testium",
   "main": "lib/testium-driver-sync.js",
   "scripts": {
-    "test": "eslint lib test && mocha"
+    "test": "eslint lib test && mocha",
+    "posttest": "npub verify"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "eslint-config-airbnb": "~0.1.0",
     "mocha": "^2.3.3",
     "node-static": "~0.7.7",
+    "npub": "^2.2.0",
     "testium-core": "^1.1.2",
     "testium-example-app": "^1.0.4"
   },
