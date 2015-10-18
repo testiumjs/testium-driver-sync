@@ -13,9 +13,9 @@ class FakeWebDriver {
 
 describe('API', () => {
   describe('construction', () => {
-    var driver = new FakeWebDriver();
-    var targetUrl = 'http://127.0.0.1:1000';
-    var commandUrl = 'http://127.0.0.1:2000';
+    const driver = new FakeWebDriver();
+    const targetUrl = 'http://127.0.0.1:1000';
+    const commandUrl = 'http://127.0.0.1:2000';
 
     it('fails if driver is undefined', () => {
       assert.throws(() =>
@@ -27,28 +27,25 @@ describe('API', () => {
         new Browser('Not a driver', {targetUrl, commandUrl}));
     });
 
-    it('succeeds if all conditions are met', () => {
-      new Browser(driver);
-    });
+    it('succeeds if all conditions are met', () =>
+      new Browser(driver));
   });
 
   describe('#evaluate', () => {
     it('fails if clientFunction is undefined', () => {
-      var err = assert.throws(() =>
+      const err = assert.throws(() =>
         Browser.prototype.evaluate.call({}, undefined));
       assert.include('requires (Function|String) clientFunction', err.message);
     });
 
     it('fails if clientFunction is not a Function or String', () => {
-      var err = assert.throws(() =>
+      const err = assert.throws(() =>
         Browser.prototype.evaluate.call({}, 999));
       assert.include('requires (Function|String) clientFunction', err.message);
     });
 
     it('succeeds if all conditions are met', done => {
-      var dummyContext = {
-        driver: { evaluate() { done(); } }
-      };
+      const dummyContext = { driver: { evaluate() { done(); } } };
       Browser.prototype.evaluate.call(dummyContext, noop);
     });
   });

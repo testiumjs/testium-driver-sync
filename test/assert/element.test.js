@@ -5,21 +5,21 @@ import ElementMixin from '../../lib/assert/element';
 
 describe('assert/element', () => {
   describe('#elementHas', () => {
-    var selector = '.box';
-    var text = 'something';
-    var element = extend({
+    const selector = '.box';
+    const text = 'something';
+    const element = extend({
       driver: {
         getElements() {
           return [ { get() { return text; } } ];
-        }
-      }
+        },
+      },
     }, ElementMixin);
 
     describe('Attributes', () => {
-      var attributesObject = {
+      const attributesObject = {
         text: text,
         value: text,
-        id: /something/
+        id: /something/,
       };
 
       it('fails if selector is undefined', () => {
@@ -81,12 +81,12 @@ describe('assert/element', () => {
   });
 
   describe('#elementLacks', () => {
-    var selector = '.box';
-    var text = 'something';
-    var element = extend({
+    const selector = '.box';
+    const text = 'something';
+    const element = extend({
       driver: {
-        getElements() { return [ { get() { return 'else'; } } ]; }
-      }
+        getElements() { return [ { get() { return 'else'; } } ]; },
+      },
     }, ElementMixin);
 
     describe('Text', () => {
@@ -133,15 +133,12 @@ describe('assert/element', () => {
   });
 
   describe('#elementIsVisible', () => {
-    var selector = '.box';
-    var element = extend({
+    const element = extend({
       browser: {
         getElementWithoutError() {
-          return {
-            isVisible() { return true; }
-          };
-        }
-      }
+          return { isVisible() { return true; } };
+        },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {
@@ -160,13 +157,12 @@ describe('assert/element', () => {
   });
 
   describe('#elementNotVisible', () => {
-    var selector = '.box';
-    var element = extend({
+    const element = extend({
       browser: {
         getElementWithoutError() {
           return { isVisible() { return false; } };
-        }
-      }
+        },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {
@@ -185,11 +181,10 @@ describe('assert/element', () => {
   });
 
   describe('#elementExists', () => {
-    var selector = '.box';
-    var element = extend({
+    const element = extend({
       browser: {
-        getElementWithoutError() { return {}; }
-      }
+        getElementWithoutError() { return {}; },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {
@@ -208,11 +203,10 @@ describe('assert/element', () => {
   });
 
   describe('#elementDoesntExist', () => {
-    var selector = '.box';
-    var element = extend({
+    const element = extend({
       browser: {
-        getElementWithoutError() { return null; }
-      }
+        getElementWithoutError() { return null; },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {

@@ -4,10 +4,10 @@ import { extend, noop } from 'lodash';
 import ImgLoadedMixin from '../../lib/assert/imgLoaded';
 
 describe('imgLoaded', () => {
-  var context = extend({
+  const context = extend({
     browser: {
-      evaluate() { return true; }
-    }
+      evaluate() { return true; },
+    },
   }, ImgLoadedMixin);
 
   it('fails if selector is undefined', () => {

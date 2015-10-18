@@ -5,10 +5,10 @@ import ElementMixin from '../../lib/browser/element';
 
 describe('element', () => {
   describe('#getElement', () => {
-    var element = extend({
+    const element = extend({
       driver: {
-        getElement() {}
-      }
+        getElement() {},
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {
@@ -25,13 +25,13 @@ describe('element', () => {
   });
 
   describe('#waitForElementVisible', () => {
-    var element = extend({
+    const element = extend({
       driver: {
         setElementTimeout() {},
         getElement() {
           return { isVisible() { return true; } };
-        }
-      }
+        },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {
@@ -48,11 +48,11 @@ describe('element', () => {
   });
 
   describe('#waitForElementNotVisible', () => {
-    var element = extend({
+    const element = extend({
       driver: {
         setElementTimeout() {},
-        getElement() { return { isVisible() { return false; } } }
-      }
+        getElement() { return { isVisible() { return false; } }; },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {
@@ -69,12 +69,12 @@ describe('element', () => {
   });
 
   describe('#click', () => {
-    var element = extend({
+    const element = extend({
       driver: {
         getElement() {
           return { click() {} };
-        }
-      }
+        },
+      },
     }, ElementMixin);
 
     it('fails if selector is undefined', () => {

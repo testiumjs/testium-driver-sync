@@ -5,12 +5,12 @@ import InputMixin from '../../lib/browser/input';
 
 describe('input api', () => {
   describe('#type', () => {
-    var element = { type() {} };
-    var input = extend({
-      getExistingElement() { return element; }
+    const element = { type() {} };
+    const input = extend({
+      getExistingElement() { return element; },
     }, InputMixin);
-    var selector = '.box';
-    var keys = 'puppies';
+    const selector = '.box';
+    const keys = 'puppies';
 
     it('fails if selector is undefined', () => {
       assert.throws(() => input.type(undefined, keys));
@@ -30,11 +30,11 @@ describe('input api', () => {
   });
 
   describe('#clear', () => {
-    var element = { clear() {} };
-    var input = extend({
-      getExistingElement() { return element; }
+    const element = { clear() {} };
+    const input = extend({
+      getExistingElement() { return element; },
     }, InputMixin);
-    var selector = '.box';
+    const selector = '.box';
 
     it('fails if selector is undefined', () => {
       assert.throws(() => input.clear(undefined));
@@ -50,12 +50,12 @@ describe('input api', () => {
   });
 
   describe('#clearAndType', () => {
-    var element = { clear() {}, type() {} };
-    var input = extend({
-      getExistingElement() { return element; }
+    const element = { clear() {}, type() {} };
+    const input = extend({
+      getExistingElement() { return element; },
     }, InputMixin);
-    var selector = '.box';
-    var keys = 'puppies';
+    const selector = '.box';
+    const keys = 'puppies';
 
     it('fails if selector is undefined', () => {
       assert.throws(() => input.clearAndType(undefined, keys));

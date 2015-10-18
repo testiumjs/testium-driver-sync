@@ -4,10 +4,10 @@ import { extend } from 'lodash';
 import NavigationMixin from '../../lib/assert/navigation';
 
 describe('assert.navigations', () => {
-  var context = extend({
+  const context = extend({
     browser: {
-      getStatusCode() { return 200; }
-    }
+      getStatusCode() { return 200; },
+    },
   }, NavigationMixin);
 
   it('fails if expectedStatus is undefined', () => {
