@@ -7,6 +7,9 @@
     "test": "eslint lib test && mocha",
     "posttest": "npub verify"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/testiumjs/testium-driver-sync.git"
