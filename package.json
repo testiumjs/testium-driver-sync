@@ -31,7 +31,7 @@
     "mocha": "^2.3.3",
     "node-static": "~0.7.7",
     "npub": "^2.2.0",
-    "testium-core": "^1.1.2",
+    "testium-core": "testiumjs/testium-core#jk-driver-factory",
     "testium-example-app": "^1.0.4"
   },
   "dependencies": {
