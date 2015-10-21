@@ -5,7 +5,7 @@ describe('header', () => {
   let browser;
   before(async () => (browser = await getBrowser()));
 
-  describe('can be retireved', () => {
+  describe('can be retrieved', () => {
     before(() => {
       browser.navigateTo('/');
       browser.assert.httpStatus(200);
