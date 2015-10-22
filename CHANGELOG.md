@@ -1,3 +1,8 @@
+2.1.0
+-----
+* Add support for `waitForElementNotExist` - @jkrems
+  https://github.com/testiumjs/testium-driver-sync/pull/4
+
 2.0.0
 -----
 This moves priming and clearing cookies into `testium-core`.
