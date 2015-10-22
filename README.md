@@ -1,4 +1,4 @@
-# Testium: Sync
+# Testium: Sync [![Build Status](https://travis-ci.org/testiumjs/testium-driver-sync.svg?branch=master)](https://travis-ci.org/testiumjs/testium-driver-sync)
 
 Provides a sync API for [testium](https://www.npmjs.com/package/testium).
 Uses [webdriver-http-sync](https://www.npmjs.com/package/webdriver-http-sync) for interacting with selenium.
