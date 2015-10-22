@@ -36,10 +36,18 @@ describe('navigation', () => {
     browser.navigateTo('/');
     assert.equal(200, browser.getStatusCode());
 
-    browser.refresh();
-    assert.equal(200, browser.getStatusCode());
+    browser.evaluate(function changePage() {
+      /* eslint no-var:0 */
+      var el = document.createElement('div');
+      el.className = 'exists-before-refresh';
+      document.body.appendChild(el);
+    });
+    // Making sure the element exists
+    browser.assert.elementExists('.exists-before-refresh');
 
-    // No real way to assert this worked
+    browser.refresh();
+    // The element should now be gone.
+    browser.assert.elementDoesntExist('.exists-before-refresh');
   });
 
   describe('waiting for a url', () => {
