@@ -190,6 +190,39 @@ describe('element', () => {
     });
   });
 
+  describe('waitForElementNotExist', () => {
+    beforeEach(() => browser.navigateTo('/other-page.html'));
+
+    function setupElement(keepAround) {
+      // We are running this in the browser context, so no fancy ES6
+      /* eslint no-var:0 */
+      var el = document.createElement('div');
+      el.textContent = 'Will go away';
+      el.className = 'remove_later';
+      document.body.appendChild(el);
+
+      if (keepAround) return;
+      setTimeout(function removeElement() {
+        document.body.removeChild(el);
+      }, 300);
+    }
+
+    it('succeeds once an element is gone', () => {
+      browser.evaluate(setupElement);
+      browser.assert.elementIsVisible('.remove_later');
+      browser.waitForElementNotExist('.remove_later');
+    });
+
+    it('fails when element still exists', () => {
+      browser.evaluate(/* keepAround = */ true, setupElement);
+      browser.assert.elementIsVisible('.remove_later');
+      const error = assert.throws(() =>
+        browser.waitForElementNotExist('.remove_later', 10));
+      assert.equal('Timeout (10ms) waiting for element (.remove_later) not to exist in page.',
+        error.message);
+    });
+  });
+
   describe('waitForElementVisible', () => {
     before(() => browser.navigateTo('/dynamic.html'));
 
