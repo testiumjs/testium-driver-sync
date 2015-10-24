@@ -21,8 +21,21 @@ describe('window api', () => {
     });
 
     it('fails with invalid frame', () => {
-      assert.throws(() =>
+      const error = assert.throws(() =>
         browser.switchToFrame('invalid-frame'));
+
+      switch (browser.capabilities.browserName) {
+      case 'phantomjs':
+        assert.equal('Unable to switch to frame', error.message);
+        break;
+
+      case 'chrome':
+        assert.include('no such frame', error.message);
+        break;
+
+      default:
+        // Other browsers might have other error messages.
+      }
     });
 
     it('can be found when nested', () => {
