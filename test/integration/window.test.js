@@ -20,8 +20,16 @@ describe('window api', () => {
       assert.equal(null, primaryContent);
     });
 
+    it('fails with invalid frame', () => {
+      assert.throws(() =>
+        browser.switchToFrame('invalid-frame'));
+    });
+
     it('can be found when nested', () => {
       browser.switchToFrame('cool-frame');
+      const outsideElement = browser.getElement('#nested-frame-div');
+      assert.equal(null, outsideElement);
+
       browser.switchToFrame('nested-frame');
       const element = browser.getElement('#nested-frame-div');
       assert.truthy('nested frame content', element);
