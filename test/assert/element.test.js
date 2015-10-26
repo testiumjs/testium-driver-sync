@@ -135,7 +135,7 @@ describe('assert/element', () => {
   describe('#elementIsVisible', () => {
     const element = extend({
       browser: {
-        getElementWithoutError() {
+        getElementOrNull() {
           return { isVisible() { return true; } };
         },
       },
@@ -159,7 +159,7 @@ describe('assert/element', () => {
   describe('#elementNotVisible', () => {
     const element = extend({
       browser: {
-        getElementWithoutError() {
+        getElementOrNull() {
           return { isVisible() { return false; } };
         },
       },
@@ -183,7 +183,7 @@ describe('assert/element', () => {
   describe('#elementExists', () => {
     const element = extend({
       browser: {
-        getElementWithoutError() { return {}; },
+        getElementOrNull() { return {}; },
       },
     }, ElementMixin);
 
@@ -205,7 +205,7 @@ describe('assert/element', () => {
   describe('#elementDoesntExist', () => {
     const element = extend({
       browser: {
-        getElementWithoutError() { return null; },
+        getElementOrNull() { return null; },
       },
     }, ElementMixin);
 
