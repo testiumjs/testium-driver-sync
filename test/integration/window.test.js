@@ -20,8 +20,29 @@ describe('window api', () => {
       assert.equal(null, primaryContent);
     });
 
+    it('fails with invalid frame', () => {
+      const error = assert.throws(() =>
+        browser.switchToFrame('invalid-frame'));
+
+      switch (browser.capabilities.browserName) {
+      case 'phantomjs':
+        assert.equal('Unable to switch to frame', error.message);
+        break;
+
+      case 'chrome':
+        assert.include('no such frame', error.message);
+        break;
+
+      default:
+        // Other browsers might have other error messages.
+      }
+    });
+
     it('can be found when nested', () => {
       browser.switchToFrame('cool-frame');
+      const outsideElement = browser.getElement('#nested-frame-div');
+      assert.equal(null, outsideElement);
+
       browser.switchToFrame('nested-frame');
       const element = browser.getElement('#nested-frame-div');
       assert.truthy('nested frame content', element);
