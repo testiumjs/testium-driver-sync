@@ -1,3 +1,10 @@
+2.2.0
+-----
+* Deprecate: getElement returns null - @jkrems
+  https://github.com/testiumjs/testium-driver-sync/pull/7
+* Better refresh test - @jkrems
+  https://github.com/testiumjs/testium-driver-sync/pull/5
+
 2.1.0
 -----
 * Add support for `waitForElementNotExist` - @jkrems
