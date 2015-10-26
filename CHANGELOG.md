@@ -1,3 +1,11 @@
+2.2.1
+-----
+* Fix `switchToFrame` tests - @jkrems
+  https://github.com/testiumjs/testium-driver-sync/pull/6
+  - Remove `getElement` exception checking, moved to `webdriver-http-sync`
+  - Fix nested switch to frame
+  - Fix tests to fail as they should
+
 2.2.0
 -----
 * Deprecate: getElement returns null - @jkrems
