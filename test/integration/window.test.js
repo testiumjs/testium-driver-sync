@@ -20,7 +20,10 @@ describe('window api', () => {
       assert.equal(null, primaryContent);
     });
 
-    it('fails with invalid frame', () => {
+    // This test is currently disabled because it caused too many
+    // problems to consistently throw on all phantomjs errors.
+    // See: https://github.com/groupon/webdriver-http-sync/pull/37
+    xit('fails with invalid frame', () => {
       const error = assert.throws(() =>
         browser.switchToFrame('invalid-frame'));
 
