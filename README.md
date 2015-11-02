@@ -5,6 +5,11 @@ Uses [webdriver-http-sync](https://www.npmjs.com/package/webdriver-http-sync) fo
 
 Check out [testium's documentation](https://www.npmjs.com/package/testium) for more information on the `browser` API.
 
+This project is a safe and inclusive place
+for contributors of all kinds.
+See the [Code of Conduct](CODE_OF_CONDUCT.md)
+for details.
+
 ## Usage
 
 ```js
