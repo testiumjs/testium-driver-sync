@@ -1,9 +1,9 @@
 import assert from 'assertive';
-import {parseLogs, filterLogs} from '../../lib/browser/debug/console';
+import { parseLogs, filterLogs } from '../../lib/browser/debug/console';
 
 describe('parseLogs', () => {
   it('maps log levels to browser log types', () => {
-    const logs = [ { level: 'SEVERE' } ];
+    const logs = [{ level: 'SEVERE' }];
     const parsed = parseLogs(logs);
     const log = parsed[0];
 
@@ -26,7 +26,7 @@ describe('filterLogs', () => {
   it('filters logs based on type', () => {
     const errorItem = { type: 'error', message: 'something broke' };
     const logItem = { type: 'log', message: 'things are working' };
-    const logs = [ logItem, errorItem ];
+    const logs = [logItem, errorItem];
 
     const { matched, rest } = filterLogs(logs, 'error');
     assert.equal(errorItem, matched[0]);
