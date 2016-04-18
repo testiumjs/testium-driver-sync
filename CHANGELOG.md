@@ -1,3 +1,14 @@
+### 2.3.0
+
+* feat: add & test buttonUp/Down & movePointerRelativeTo - **[@dbushong](https://github.com/dbushong)** [#12](https://github.com/testiumjs/testium-driver-sync/pull/12)
+  - [`f416cf4`](https://github.com/testiumjs/testium-driver-sync/commit/f416cf46fab78522f0632ec9917c900ee38c5107) **feat:** add & test buttonUp/Down & movePointerRelativeTo
+* Apply latest nlm generator - **[@i-tier-bot](https://github.com/i-tier-bot)** [#10](https://github.com/testiumjs/testium-driver-sync/pull/10)
+  - [`15b46d4`](https://github.com/testiumjs/testium-driver-sync/commit/15b46d4c6702b1e52e86b54b0aecd62d6864630a) **chore:** Apply latest nlm generator
+  - [`8aaf0fd`](https://github.com/testiumjs/testium-driver-sync/commit/8aaf0fdbf9795796ff1d8d1e69410dce184848d0) **style:** Lint rules and license headers
+  - [`faf388b`](https://github.com/testiumjs/testium-driver-sync/commit/faf388ba8695380421abf0f7fef85189857ccc2c) **chore:** Use Groupon user for publishing
+  - [`e5847cb`](https://github.com/testiumjs/testium-driver-sync/commit/e5847cba2287ca1b1c947050dd3272082580ce66) **style:** Add license header and fix spacing
+
+
 2.2.1
 -----
 * Fix `switchToFrame` tests - @jkrems
