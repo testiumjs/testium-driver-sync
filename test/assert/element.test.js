@@ -10,14 +10,14 @@ describe('assert/element', () => {
     const element = extend({
       driver: {
         getElements() {
-          return [ { get() { return text; } } ];
+          return [{ get() { return text; } }];
         },
       },
     }, ElementMixin);
 
     describe('Attributes', () => {
       const attributesObject = {
-        text: text,
+        text,
         value: text,
         id: /something/,
       };
@@ -85,7 +85,7 @@ describe('assert/element', () => {
     const text = 'something';
     const element = extend({
       driver: {
-        getElements() { return [ { get() { return 'else'; } } ]; },
+        getElements() { return [{ get() { return 'else'; } }]; },
       },
     }, ElementMixin);
 
@@ -224,4 +224,3 @@ describe('assert/element', () => {
     });
   });
 });
-

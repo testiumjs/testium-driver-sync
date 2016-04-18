@@ -1,4 +1,4 @@
-import {getBrowser} from '../mini-testium-mocha';
+import { getBrowser } from '../mini-testium-mocha';
 import assert from 'assertive';
 
 describe('window api', () => {
@@ -28,15 +28,15 @@ describe('window api', () => {
         browser.switchToFrame('invalid-frame'));
 
       switch (browser.capabilities.browserName) {
-      case 'phantomjs':
-        assert.equal('Unable to switch to frame', error.message);
-        break;
+        case 'phantomjs':
+          assert.equal('Unable to switch to frame', error.message);
+          break;
 
-      case 'chrome':
-        assert.include('no such frame', error.message);
-        break;
+        case 'chrome':
+          assert.include('no such frame', error.message);
+          break;
 
-      default:
+        default:
         // Other browsers might have other error messages.
       }
     });

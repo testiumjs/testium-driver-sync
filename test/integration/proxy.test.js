@@ -1,4 +1,4 @@
-import {getBrowser} from '../mini-testium-mocha';
+import { getBrowser } from '../mini-testium-mocha';
 
 describe('proxy', () => {
   let browser;

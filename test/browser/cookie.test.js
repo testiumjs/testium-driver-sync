@@ -51,7 +51,7 @@ describe('cookie', () => {
     };
     const cookie = extend({
       driver: {
-        getCookies() { return [ testiumCookie ]; },
+        getCookies() { return [testiumCookie]; },
       },
     }, CookieMixin);
 

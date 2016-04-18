@@ -19,12 +19,12 @@ describe('API', () => {
 
     it('fails if driver is undefined', () => {
       assert.throws(() =>
-        new Browser(undefined, {targetUrl, commandUrl}));
+        new Browser(undefined, { targetUrl, commandUrl }));
     });
 
     it('fails if driver is not an object', () => {
       assert.throws(() =>
-        new Browser('Not a driver', {targetUrl, commandUrl}));
+        new Browser('Not a driver', { targetUrl, commandUrl }));
     });
 
     it('succeeds if all conditions are met', () =>

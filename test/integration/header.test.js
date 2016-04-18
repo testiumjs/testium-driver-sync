@@ -1,4 +1,4 @@
-import {getBrowser} from '../mini-testium-mocha';
+import { getBrowser } from '../mini-testium-mocha';
 import assert from 'assertive';
 
 describe('header', () => {

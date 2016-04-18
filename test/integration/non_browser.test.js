@@ -1,6 +1,6 @@
-import {get} from 'http';
+import { get } from 'http';
 
-import {getBrowser} from '../mini-testium-mocha';
+import { getBrowser } from '../mini-testium-mocha';
 import assert from 'assertive';
 
 describe('Non-browser test', () => {

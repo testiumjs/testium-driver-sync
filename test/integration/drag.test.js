@@ -1,6 +1,6 @@
-import {getBrowser} from '../mini-testium-mocha';
+import { getBrowser } from '../mini-testium-mocha';
 import assert from 'assertive';
-import {pick} from 'lodash';
+import { pick } from 'lodash';
 
 describe('draggable element', () => {
   let browser;

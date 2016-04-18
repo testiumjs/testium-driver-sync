@@ -2,27 +2,51 @@
   "name": "testium-driver-sync",
   "version": "2.2.2",
   "description": "Sync interface for testium",
+  "license": "BSD-3-Clause",
   "main": "lib/testium-driver-sync.js",
-  "scripts": {
-    "test": "eslint lib test && mocha",
-    "posttest": "npub verify"
-  },
-  "files": [
-    "lib"
-  ],
+  "homepage": "https://github.com/testiumjs/testium-driver-sync#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/testiumjs/testium-driver-sync.git"
+    "url": "git+ssh://git@github.com/testiumjs/testium-driver-sync"
   },
-  "keywords": [
-    "testium",
-    "sync",
-    "selenium",
-    "webdriver"
-  ],
+  "bugs": {
+    "url": "https://github.com/testiumjs/testium-driver-sync/issues",
+    "chat": "http://signup.testiumjs.com/"
+  },
+  "scripts": {
+    "pretest": "eslint lib test",
+    "test": "mocha",
+    "posttest": "nlm verify"
+  },
+  "nlm": {
+    "license": {
+      "files": [
+        "lib"
+      ]
+    }
+  },
+  "dependencies": {
+    "assertive": "^2.0.2",
+    "bluebird": "^3.3.3",
+    "debug": "^2.2.0",
+    "lodash": "^4.6.1",
+    "testium-cookie": "^1.0.0",
+    "webdriver-http-sync": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-eslint": "^4.1.3",
+    "eslint": "^1.0.0",
+    "eslint-config-groupon": "^2.0.0",
+    "mocha": "^2.0.0",
+    "nlm": "^2.0.0",
+    "node-static": "~0.7.7",
+    "testium-core": "^1.3.0",
+    "testium-example-app": "^2.1.0"
+  },
   "author": {
-    "name": "Sean Massa",
-    "email": "endangeredmassa@gmail.com"
+    "name": "Groupon",
+    "email": "opensource@groupon.com"
   },
   "contributors": [
     {
@@ -56,38 +80,22 @@
     {
       "name": "Parag Gupta",
       "email": "paraggupta1993@gmail.com"
+    },
+    {
+      "name": "Sean Massa",
+      "email": "endangeredmassa@gmail.com"
     }
   ],
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/testiumjs/testium-driver-sync/issues"
-  },
-  "homepage": "https://github.com/testiumjs/testium-driver-sync#readme",
-  "devDependencies": {
-    "babel-core": "^5.8.25",
-    "babel-eslint": "^4.1.3",
-    "eslint": "^1.6.0",
-    "eslint-config-airbnb": "~0.1.0",
-    "mocha": "^2.3.3",
-    "node-static": "~0.7.7",
-    "npub": "^2.2.0",
-    "testium-core": "^1.3.0",
-    "testium-example-app": "^2.1.0"
-  },
-  "dependencies": {
-    "assertive": "^2.0.2",
-    "bluebird": "~2.10.2",
-    "debug": "^2.2.0",
-    "lodash": "^3.10.1",
-    "testium-cookie": "^1.0.0",
-    "webdriver-http-sync": "^2.0.0"
-  },
+  "keywords": [
+    "testium",
+    "sync",
+    "selenium",
+    "webdriver"
+  ],
+  "files": [
+    "lib"
+  ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "license": {
-      "exclude": [
-        "."
-      ]
-    }
+    "registry": "https://registry.npmjs.org"
   }
 }
