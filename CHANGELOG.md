@@ -1,3 +1,10 @@
+### 2.3.1
+
+* Fixin mixin require logic - **[@dbushong](https://github.com/dbushong)** [#13](https://github.com/testiumjs/testium-driver-sync/pull/13)
+  - [`a97f567`](https://github.com/testiumjs/testium-driver-sync/commit/a97f56737000d9b2dc7929562fefc2fa39c6d865) **fix:** properly handle modules-as-mixins
+  - [`b5fc336`](https://github.com/testiumjs/testium-driver-sync/commit/b5fc3365e1f98a04dc93678776a4c766a7194534) **test:** fix tests for assertion library spacing tweaks
+
+
 ### 2.3.0
 
 * feat: add & test buttonUp/Down & movePointerRelativeTo - **[@dbushong](https://github.com/dbushong)** [#12](https://github.com/testiumjs/testium-driver-sync/pull/12)

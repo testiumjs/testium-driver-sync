@@ -1,6 +1,6 @@
 {
   "name": "testium-driver-sync",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Sync interface for testium",
   "license": "BSD-3-Clause",
   "main": "lib/testium-driver-sync.js",
